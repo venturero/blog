@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<div class = "jumbotron text-center">
+    <h3>Semi Venturero'nun sayfasına hoşgeldiniz</h3>
+    <p>bu sayfaya girip bana para kazandırabilirsiniz</p>
+</div>
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>    
+<img src="https://pbs.twimg.com/profile_images/1113889879333720064/Mq8uf8qb.jpg" alt="İnternetten" height="300" weight="200" >
+{% if  islem == 1 %}
+<p>1.işlem</p>
+{% elif  islem == 1 %}
+<p>2.işlem</p>
+{% else %}
+<p>Geçersiz İşlem</p>
+{% endif %} 
+<ul>
+    {% for article in articles  %}
+        <li>Article Id: {{article.id}} - Title: {{article.title}}- Content: {{article.content}}</li>
+
+    {% endfor %}
+</ul>
+
+{% endblock  %}
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
